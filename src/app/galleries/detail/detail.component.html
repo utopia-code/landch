@@ -1,0 +1,25 @@
+<div #grid class="grid">
+    <div class="grid-sizer"></div>
+
+    <div *ngFor="let image of images; let i = index" #gridItem [ngClass]="getImageClasses(image)">
+      <ng-container *ngIf="image.isFavourite">
+        <fa-icon [icon]="faHeart" class="favourite-icon"></fa-icon>
+      </ng-container>
+
+      <a [attr.data-fslightbox]="'gallery'" [href]="image.url">
+
+        <fa-icon [icon]="faEye" class="view-icon"></fa-icon>
+
+        
+      </a>
+
+      <a [href]="image.url" download>
+        <fa-icon [icon]="faCloundArrowDown" class="download-icon"></fa-icon>
+      </a>
+
+      <img
+          [src]="image.format === 'grid-simple' ? image.thumbnail : image.webp"
+          [alt]="image.tags.join(', ')" />
+      
+    </div>
+</div>

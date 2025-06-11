@@ -1,0 +1,83 @@
+<div class="home-content" >
+    <section class="hero-video">
+        <div class="video-inner">
+            <div class="video-wrap">
+                <video 
+                    #lazyVideo  
+                    autoplay
+                    loop 
+                    muted 
+                    playsinline
+                    preload="none" 
+                    poster="assets/videos/loop/poster-video-home.webp">
+
+                    <source 
+                        [src]="isMobile 
+                            ? 'https://videos-loop.netlify.app/video-home-mobile.mp4' 
+                            : 'https://videos-loop.netlify.app/boda-video-home.mp4'" 
+                        type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <section class="">
+
+    </section>
+
+    <div class="fade-in-delayed" [ngClass]="{'visible': listVisible}">
+
+        <section class="vertical-videos">
+            <div class="video-row">
+                <div class="video-wrap">
+                    <video 
+                        #lazyVideo 
+                        autoplay
+                        loop 
+                        muted 
+                        playsinline
+                        preload="none" 
+                        poster="assets/videos/loop/poster-boda-party-vertical-1.webp">
+
+                        <source 
+                        [src]="isMobile 
+                            ? 'https://videos-loop.netlify.app/boda-party-vertical-1-mobile.mp4' 
+                            : 'https://videos-loop.netlify.app/boda-party-vertical-1.mp4'" 
+                        type="video/mp4">
+                    </video>
+                </div>
+        
+                <div class="video-link">
+                    <div>
+                        <h2>Lorem ipsum dolor</h2>
+                        <p>sit amet consectetur adipisicing elit. Nostrum aperiam, labore modi est inventore fuga. Officiis laudantium suscipit corrupti dolorem similique voluptatibus cumque minus, adipisci est? Nisi voluptatibus excepturi culpa!</p>
+                        <button [routerLink]="['/videos']">Ver todos los vídeos</button>
+                    </div>
+                </div>
+        
+                <div class="video-wrap">
+                    <video 
+                        #lazyVideo 
+                        autoplay
+                        loop 
+                        muted 
+                        playsinline
+                        preload="none" 
+                        poster="assets/videos/loop/poster-boda-party-vertical-2.webp">
+
+                        <source 
+                        [src]="isMobile 
+                            ? 'https://videos-loop.netlify.app/boda-party-vertical-2-mobile.mp4' 
+                            : 'https://videos-loop.netlify.app/boda-party-vertical-2.mp4'" 
+                        type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </section>
+        
+        <h2 id="favourites" style="text-align: center;">Nuestros favoritos</h2>
+        
+        <app-list></app-list>
+    </div>
+    
+</div>

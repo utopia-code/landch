@@ -1,0 +1,160 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    /* --color-primary: #f7018b; */
+    --color-primary: #d60382;
+
+    /* option 1:  */
+    --color-secondary: #32812C;
+    --color-primary-sat: #812C5F;
+    --color-secondary-sat: #243323;
+
+    /* option 2:  */
+    /* --color-secondary: #41572C;
+    --color-primary-sat: #572C46;
+    --color-secondary-sat: #2C5738; */
+
+    /* option 3:  */
+    /* --color-secondary: #2C5457;
+    --color-primary-sat: #812C5F;
+    --color-secondary-sat: #2C5457; */
+
+    /* option 4:  */
+    /* --color-secondary: #2C3D57;
+    --color-primary-sat: #812C5F;
+    --color-secondary-sat: #2C3D57; */
+
+
+    --color-primary-rgb: 214, 2, 130;
+    --color-primary-sat-rgb: 129, 44, 95;
+}
+
+/*
+FONTS
+*/
+
+/* bodoni-moda-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Bodoni Moda';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/bodoni-moda-v25-latin/bodoni-moda-v25-latin-regular.woff2') format('woff2');
+}
+
+/* bodoni-moda-600 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Bodoni Moda';
+    font-style: normal;
+    font-weight: 600;
+    src: url('./assets/fonts/bodoni-moda-v25-latin/bodoni-moda-v25-latin-600.woff2') format('woff2');
+}
+
+/* bodoni-moda-800 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Bodoni Moda';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./assets/fonts/bodoni-moda-v25-latin/bodoni-moda-v25-latin-800.woff2') format('woff2');
+}
+
+/* raleway-300 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./assets/fonts/raleway-v34-latin/raleway-v34-latin-300.woff2') format('woff2');
+}
+
+/* raleway-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/raleway-v34-latin/raleway-v34-latin-regular.woff2') format('woff2');
+}
+
+/* raleway-500 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./assets/fonts/raleway-v34-latin/raleway-v34-latin-500.woff2') format('woff2');
+}
+
+/* outfit-800 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 800;
+    src: url('./assets/fonts/outfit-v11-latin/outfit-v11-latin-800.woff2') format('woff2');
+}
+
+/* outfit-900 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 900;
+    src: url('./assets/fonts/outfit-v11-latin/outfit-v11-latin-900.woff2') format('woff2');
+}
+
+
+
+
+/*
+GENERAL
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+}
+
+button {
+    font-family: "Raleway", sans-serif;
+}
+
+.outfit {
+    font-family: "Outfit", sans-serif;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+    font-family: "Bodoni Moda", serif;
+}
+
+h2 {
+    font-size: calc(2.5rem + .5vw);
+    line-height: 1;
+}
+
+.c-primary {
+    color: var(--color-primary);
+}
+
+.c-secondary {
+    color: var(--color-secondary);
+}
+
+.c-primary-sat {
+    color: var(--color-primary-sat);
+}
+
+.c-secondary-sat {
+    color: var(--color-secondary-sat);
+}

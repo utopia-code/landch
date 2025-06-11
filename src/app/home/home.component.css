@@ -1,0 +1,129 @@
+/* VIDEOS */
+
+.home-content.hidden {
+    overflow: hidden;
+    height: 0;
+    pointer-events: none;
+}
+
+.hero-video video,
+.vertical-videos video {
+    max-height: 1080px;
+}
+
+.hero-video video {
+    width: 100vw;
+    object-fit: cover;
+}
+
+.vertical-videos {
+    padding: 60px 20px;
+}
+
+.vertical-videos .video-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.vertical-videos .video-row>* {
+    width: 33.333%;
+    text-align: center;
+}
+
+@media screen and (max-width: 1020px) {
+    .vertical-videos .video-row {
+        flex-direction: column;
+    }
+
+    .vertical-videos .video-row>* {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767.89px) {
+
+    .hero-video video,
+    .vertical-videos video {
+        max-height: 720px;
+    }
+
+    .hero-video video {
+        min-height: 720px;
+    }
+}
+
+video {
+    max-width: 100%;
+}
+
+
+/* BUTTON */
+
+button {
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    padding: 13px 10px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+button:after {
+    content: "";
+    background-color: rgba(var(--color-primary-rgb), 1);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+}
+
+button:hover:after {
+    top: 0px;
+    left: 0px;
+}
+
+button.active:after {
+    background-color: var(--color-primary-sat);
+}
+
+.video-link button {
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 1020px) {
+    .video-link button {
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    button {
+        padding: 13px 20px 13px;
+    }
+}
+
+
+/* LIST COMPONENT */
+
+.fade-in-delayed {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in-delayed.visible {
+    opacity: 1;
+}

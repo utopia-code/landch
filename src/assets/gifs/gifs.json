@@ -1,0 +1,282 @@
+[
+    {
+        "id": 1,
+        "url": "assets/gifs/giphy-ceremonia-1.mp4",
+        "tags": [
+            "ceremonia"
+        ]
+    },
+    {
+        "id": 2,
+        "url": "assets/gifs/giphy-ceremonia-2.mp4",
+        "tags": [
+            "ceremonia"
+        ]
+    },
+    {
+        "id": 3,
+        "url": "assets/gifs/giphy-ceremonia-3.mp4",
+        "tags": [
+            "ceremonia"
+        ]
+    },
+    {
+        "id": 4,
+        "url": "assets/gifs/giphy-ceremonia-4.mp4",
+        "tags": [
+            "ceremonia"
+        ]
+    },
+    {
+        "id": 5,
+        "url": "assets/gifs/giphy-firmas-1.mp4",
+        "tags": [
+            "firmas"
+        ]
+    },
+    {
+        "id": 6,
+        "url": "assets/gifs/giphy-firmas-2.mp4",
+        "tags": [
+            "firmas"
+        ]
+    },
+    {
+        "id": 7,
+        "url": "assets/gifs/giphy-firmas-3.mp4",
+        "tags": [
+            "firmas"
+        ]
+    },
+    {
+        "id": 8,
+        "url": "assets/gifs/giphy-firmas-4.mp4",
+        "tags": [
+            "firmas"
+        ]
+    },
+    {
+        "id": 9,
+        "url": "assets/gifs/giphy-gaiteiro-1.mp4",
+        "tags": [
+            "gaiteiro"
+        ]
+    },
+    {
+        "id": 10,
+        "url": "assets/gifs/giphy-gaiteiro-2.mp4",
+        "tags": [
+            "gaiteiro"
+        ]
+    },
+    {
+        "id": 11,
+        "url": "assets/gifs/giphy-gaiteiro-3.mp4",
+        "tags": [
+            "gaiteiro"
+        ]
+    },
+    {
+        "id": 12,
+        "url": "assets/gifs/giphy-gaiteiro-4.mp4",
+        "tags": [
+            "gaiteiro"
+        ]
+    },
+    {
+        "id": 13,
+        "url": "assets/gifs/giphy-just-married-1.gif.mp4",
+        "tags": [
+            "just-married"
+        ]
+    },
+    {
+        "id": 14,
+        "url": "assets/gifs/giphy-just-married-2.mp4",
+        "tags": [
+            "just-married"
+        ]
+    },
+    {
+        "id": 15,
+        "url": "assets/gifs/giphy-just-married-3.mp4",
+        "tags": [
+            "just-married"
+        ]
+    },
+    {
+        "id": 16,
+        "url": "assets/gifs/giphy-just-married-4.mp4",
+        "tags": [
+            "just-married"
+        ]
+    },
+    {
+        "id": 17,
+        "url": "assets/gifs/giphy-party-1.mp4",
+        "tags": [
+            "party"
+        ]
+    },
+    {
+        "id": 18,
+        "url": "assets/gifs/giphy-party-2.mp4",
+        "tags": [
+            "party"
+        ]
+    },
+    {
+        "id": 19,
+        "url": "assets/gifs/giphy-party-3.mp4",
+        "tags": [
+            "party"
+        ]
+    },
+    {
+        "id": 20,
+        "url": "assets/gifs/giphy-party-4.mp4",
+        "tags": [
+            "party"
+        ]
+    },
+    {
+        "id": 21,
+        "url": "assets/gifs/giphy-photocall-1.mp4",
+        "tags": [
+            "photocall"
+        ]
+    },
+    {
+        "id": 22,
+        "url": "assets/gifs/giphy-photocall-2.mp4",
+        "tags": [
+            "photocall"
+        ]
+    },
+    {
+        "id": 23,
+        "url": "assets/gifs/giphy-photocall-3.mp4",
+        "tags": [
+            "photocall"
+        ]
+    },
+    {
+        "id": 24,
+        "url": "assets/gifs/giphy-photocall-4.mp4",
+        "tags": [
+            "photocall"
+        ]
+    },
+    {
+        "id": 25,
+        "url": "assets/gifs/giphy-photomaton-1.mp4",
+        "tags": [
+            "photomaton"
+        ]
+    },
+    {
+        "id": 26,
+        "url": "assets/gifs/giphy-photomaton-2.mp4",
+        "tags": [
+            "photomaton"
+        ]
+    },
+    {
+        "id": 27,
+        "url": "assets/gifs/giphy-photomaton-3.mp4",
+        "tags": [
+            "photomaton"
+        ]
+    },
+    {
+        "id": 28,
+        "url": "assets/gifs/giphy-photomaton-4.mp4",
+        "tags": [
+            "photomaton"
+        ]
+    },
+    {
+        "id": 29,
+        "url": "assets/gifs/giphy-pre-ceremonia-1.mp4",
+        "tags": [
+            "pre-ceremonia"
+        ]
+    },
+    {
+        "id": 30,
+        "url": "assets/gifs/giphy-pre-ceremonia-2.mp4",
+        "tags": [
+            "pre-ceremonia"
+        ]
+    },
+    {
+        "id": 31,
+        "url": "assets/gifs/giphy-pre-ceremonia-3.mp4",
+        "tags": [
+            "pre-ceremonia"
+        ]
+    },
+    {
+        "id": 32,
+        "url": "assets/gifs/giphy-salon-1.mp4",
+        "tags": [
+            "salon"
+        ]
+    },
+    {
+        "id": 33,
+        "url": "assets/gifs/giphy-salon-2.mp4",
+        "tags": [
+            "salon"
+        ]
+    },
+    {
+        "id": 34,
+        "url": "assets/gifs/giphy-salon-3.mp4",
+        "tags": [
+            "salon"
+        ]
+    },
+    {
+        "id": 35,
+        "url": "assets/gifs/giphy-salon-4.mp4",
+        "tags": [
+            "salon"
+        ]
+    },
+    {
+        "id": 36,
+        "url": "assets/gifs/giphy-xaz-1.mp4",
+        "tags": [
+            "garden"
+        ]
+    },
+    {
+        "id": 37,
+        "url": "assets/gifs/giphy-xaz-2.mp4",
+        "tags": [
+            "garden"
+        ]
+    },
+    {
+        "id": 38,
+        "url": "assets/gifs/giphy-xaz-3.mp4",
+        "tags": [
+            "garden"
+        ]
+    },
+    {
+        "id": 39,
+        "url": "assets/gifs/giphy-xaz-4.mp4",
+        "tags": [
+            "garden"
+        ]
+    },
+    {
+        "id": 40,
+        "url": "assets/gifs/giphy-just-married-5.mp4",
+        "tags": [
+            "just-married"
+        ]
+    }
+]

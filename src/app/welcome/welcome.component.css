@@ -1,0 +1,63 @@
+.image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9000;
+    background: url('../../assets/images/original/IMG_4363.jpg') center / cover no-repeat;
+}
+
+.image-bg p {
+    margin: 0;
+    width: 100%;
+    font-size: clamp(2rem, 50vw, 40rem);
+    line-height: 1;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: transparent;
+    -webkit-text-stroke: 1.5px white;
+
+    font-family: 'Bodoni', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-bg p span {
+    line-height: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .image-bg p {
+        -webkit-text-stroke: 2px white;
+    }
+}
+
+@media screen and (min-width: 1050px) {
+    .image-bg p {
+        -webkit-text-stroke: 3px white;
+    }
+
+    .image-bg p .t-top {
+        margin-bottom: -5%;
+    }
+}
+
+:host {
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

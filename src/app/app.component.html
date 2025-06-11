@@ -1,0 +1,11 @@
+<app-header *ngIf="preloadHome"></app-header>
+
+<app-welcome *ngIf="showWelcome" [@fadeInOut]></app-welcome>
+
+<ng-container *ngIf="preloadHome">
+  <div *ngIf="showHome" [@fadeInOut]>
+    <router-outlet></router-outlet>
+  </div>
+</ng-container>
+
+<app-footer *ngIf="preloadHome"></app-footer>

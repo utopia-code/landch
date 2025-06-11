@@ -1,0 +1,60 @@
+<div class="filters">
+  <button 
+    *ngFor="let category of categories" 
+    (click)="filterByTag('.' + category.tag)" 
+    [class.active]="activeCategoryTag === category.tag">
+    {{ category.label }}
+  </button>
+</div>
+
+<div #grid class="grid">
+  <div class="grid-sizer"></div>
+
+  <div *ngFor="let item of mediaItems" [attr.data-category]="item.type" [ngClass]="getMediaClasses(item)">
+    <img 
+      *ngIf="isImage(item)"
+      [src]="item.format === 'grid-simple' ? item.thumbnail : item.webp"  
+      [alt]="item.tags.join(', ')" 
+      (load)="layoutIsotope()" />
+
+    <video 
+      #videoRef
+      *ngIf="isVideo(item)"
+      [src]="item.preview" 
+      preload="metadata"
+      autoplay 
+      loop 
+      muted
+      playsinline 
+      (loadedmetadata)="onVideoLoaded(videoRef)">
+    </video>
+
+    <video 
+      #gifRef
+      *ngIf="isGif(item)" 
+      [src]="item.url"
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      class="gif"
+      (loadedmetadata)="onVideoLoaded(gifRef)">
+    </video>
+
+  </div>
+
+  <ng-container *ngFor="let category of categories">
+    <div 
+      [ngClass]="getLinkClasses(category.tag)" 
+      data-category="link"
+      (click)="getProductByCategory(category.tag)">
+      <span>Ver más fotos de la categoría {{ category.label | uppercase }} </span>
+    </div>
+  </ng-container>
+
+  <div class="grid-item grid-item--width2 firmas" data-category="gif">
+    <img src="assets/images/gifs/just-married.gif" />
+  </div>
+
+  <!-- <div class="grid-item grid-item-width-2 {{ icon[0] }}" data-category="icon"><i class="fa-solid {{ icon[1] }}"></i></div> -->
+</div>
