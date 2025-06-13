@@ -23,7 +23,7 @@
     text-transform: uppercase;
 
     color: transparent;
-    -webkit-text-stroke: 1.5px white;
+    -webkit-text-stroke: 1.5px #fff;
 
     font-family: 'Bodoni', serif;
     display: flex;
@@ -37,13 +37,13 @@
 
 @media screen and (min-width: 768px) {
     .image-bg p {
-        -webkit-text-stroke: 2px white;
+        -webkit-text-stroke: 2px #fff;
     }
 }
 
 @media screen and (min-width: 1050px) {
     .image-bg p {
-        -webkit-text-stroke: 3px white;
+        -webkit-text-stroke: 3px #fff;
     }
 
     .image-bg p .t-top {
