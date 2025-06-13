@@ -1,0 +1,27 @@
+.footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px 20px 40px;
+    /* border-top: 1px solid #000; */
+
+
+    position: relative;
+    padding-top: 40px;
+}
+
+
+
+.footer::before {
+    content: "💍💐💞🎉🌸💖🥂✨🎀🌈🍰🍾🎊🎂🌷💍💐💞🎉🌸💖🥂✨🎀🌈🍰🍾🎊🎂🌷💍💐💞🎉🌸💖🥂✨🎀🌈🍰🍾🎊🎂🌷💍💐💞🎉🌸💖🥂✨🎀🌈🍰🍾🎊🎂🌷💍💐💞🎉🌸💖🥂✨🎀🌈🍰🍾🎊🎂🌷💍💐💞🎉🌸💖🥂✨🎀🌈🍰🍾🎊🎂🌷💍💐💞🎉🌸💖🥂✨🎀🌈🍰🍾🎊🎂🌷💍💐💞🎉🌸💖🥂✨🎀🌈🍰🍾🎊🎂🌷";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: visible;
+    width: max-content;
+}
