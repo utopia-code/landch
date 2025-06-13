@@ -3,7 +3,13 @@
 <app-welcome *ngIf="showConfetti" [@fadeInOut]></app-welcome>
 
 <div *ngIf="showWelcome" [@fadeInOut] class="image-bg">
-  <p><span class="t-top">CH</span><span class="t-bottom">&L</span></p>
+  <ng-container *ngIf="!isMobile || !showMobileButton">
+    <p><span class="t-top">CH</span><span class="t-bottom">&L</span></p>
+  </ng-container>
+
+  <button *ngIf="isMobile && showMobileButton" (click)="skipWelcome()" class="welcome-button">
+    Continuar
+  </button>
 </div>
 
 <ng-container *ngIf="preloadHome">

@@ -31,27 +31,42 @@ export class AppComponent implements OnInit {
   showConfetti = true;
   showWelcome = true;
   preloadHome = false;
-  showHome = false;
+  isMobile = false;
+  showMobileButton = false;
 
   ngOnInit(): void {
+    this.isMobile = window.innerWidth <= 768;
     const alreadyShown = sessionStorage.getItem('welcomeShown');
 
     if (alreadyShown) {
       this.showConfetti = false;
       this.showWelcome = false;
       this.preloadHome = true;
-      this.showHome = true;
     } else {
       setTimeout(() => {
-        this.preloadHome = true;
-      }, 5000);
-
-      setTimeout(() => {
         this.showConfetti = false;
-        this.showWelcome = false;
-        this.showHome = true;
-        sessionStorage.setItem('welcomeShown', 'true');
       }, 7000);
+
+      if (this.isMobile) {
+        setTimeout(() => {
+          this.showMobileButton = true;
+        }, 7000);
+      } else {
+        setTimeout(() => {
+          this.preloadHome = true;
+        }, 5000);
+
+        setTimeout(() => {
+          this.showWelcome = false;
+          sessionStorage.setItem('welcomeShown', 'true');
+        }, 7000);
+      }
     }
+  }
+
+  skipWelcome(): void {
+    this.showWelcome = false;
+    this.preloadHome = true;
+    sessionStorage.setItem('welcomeShown', 'true');
   }
 }
