@@ -2,11 +2,9 @@
     text-align: center;
     margin-top: 60px;
     padding: 20px 20px 40px;
-    /* border-top: 1px solid #000; */
-
-
     position: relative;
     padding-top: 40px;
+    overflow-x: hidden;
 }
 
 
@@ -22,6 +20,6 @@
     display: flex;
     justify-content: center;
     white-space: nowrap;
-    overflow: visible;
+    overflow: hidden;
     width: max-content;
 }
