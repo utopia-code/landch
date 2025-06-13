@@ -14,7 +14,6 @@ import { ListComponent } from '../galleries/list/list.component';
 export class HomeComponent implements OnInit,AfterViewInit{
   @ViewChildren('lazyVideo') lazyVideos!: QueryList<ElementRef<HTMLVideoElement>>;
 
-  loading = true;
   listVisible = false;
   isMobile = false;
 
@@ -55,49 +54,20 @@ export class HomeComponent implements OnInit,AfterViewInit{
         threshold: 0.1,
       });
 
-      const waitForVideos = () => {
-        const videoElements = this.lazyVideos.map(v => v.nativeElement);
-        const promises = videoElements.map(video => {
-          return new Promise<void>((resolve) => {
-            if (video.readyState >= 3) {
-              resolve();
-            } else {
-              const onReady = () => {
-                resolve();
-                video.removeEventListener('canplaythrough', onReady);
-              };
-              video.addEventListener('canplaythrough', onReady);
-              video.load();
-            }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+          this.lazyVideos.forEach(videoRef => {
+            observer.observe(videoRef.nativeElement);
           });
         });
-
-        Promise.all(promises).then(() => {
-          this.loading = false; 
-          this.lazyVideos.forEach(videoRef => observer.observe(videoRef.nativeElement));
-        });
-      };
-
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(waitForVideos);
       } else {
-        setTimeout(waitForVideos, 200);
-      }
-
-      // if ('requestIdleCallback' in window) {
-      //   requestIdleCallback(() => {
-      //     this.lazyVideos.forEach(videoRef => {
-      //       observer.observe(videoRef.nativeElement);
-      //     });
-      //   });
-      // } else {
         
-      //   setTimeout(() => {
-      //     this.lazyVideos.forEach(videoRef => {
-      //       observer.observe(videoRef.nativeElement);
-      //     });
-      //   }, 200);
-      // }
+        setTimeout(() => {
+          this.lazyVideos.forEach(videoRef => {
+            observer.observe(videoRef.nativeElement);
+          });
+        }, 200);
+      }
 
     
     }
