@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -50,29 +50,9 @@ export class DetailComponent implements OnInit, AfterViewInit, AfterViewChecked 
   
   constructor(
     private activatedRoute: ActivatedRoute,
-    private imagesService: ImagesService
+    private imagesService: ImagesService,
+    private location: Location
   ) {}
-
-  // ngOnInit(): void {
-  //   this.category = this.activatedRoute.snapshot.paramMap.get('category');
-
-  //   const categoryTag = this.categories.find(c => c.tag === this.category);
-
-  //   if (categoryTag) {
-  //     this.imageURL = categoryTag.image;
-  //     this.textIntro = categoryTag.label;
-  //   }
-
-  //   if (this.category) {
-  //     this.imagesService.getImagesByTag(this.category).subscribe((data) => {
-  //       this.images = data;
-
-  //       setTimeout(() => {
-  //         this.initMasonry();
-  //       }, 0);
-  //     });
-  //   }
-  // }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -137,6 +117,10 @@ export class DetailComponent implements OnInit, AfterViewInit, AfterViewChecked 
 
   getImageClasses(image: ImageDTO): string {
     return ['grid-item', image.format].join(' ');
+  }
+
+  back(): void {
+    this.location.back();
   }
 
 }

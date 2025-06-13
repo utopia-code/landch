@@ -2,6 +2,8 @@
     position: relative;
     margin-left: -5px;
     margin-right: -5px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .grid-sizer {
@@ -95,4 +97,11 @@
 .download-icon:hover,
 .view-icon:hover {
     color: var(--color-primary);
+}
+
+
+/* BUTTON */
+
+.back-button {
+    margin-left: 20px;
 }

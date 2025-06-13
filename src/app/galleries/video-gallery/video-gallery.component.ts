@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import imagesLoaded from 'imagesloaded';
 import Masonry from 'masonry-layout';
@@ -21,7 +21,10 @@ export class VideoGalleryComponent implements OnInit, AfterViewInit {
   videos: VideoDTO[] = [];
   private masonry!: Masonry;
 
-  constructor(private videosService: VideosService) {}
+  constructor(
+    private videosService: VideosService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
     this.videosService.getAllVideos().subscribe(data => {
@@ -92,6 +95,10 @@ export class VideoGalleryComponent implements OnInit, AfterViewInit {
       .map(({ value }) => value);
 
     shuffled.forEach(el => container.appendChild(el));
+  }
+
+  back(): void {
+    this.location.back();
   }
   
 }

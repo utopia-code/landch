@@ -2,21 +2,30 @@
   <p>{{ textIntro }}</p>
 </div>
 
+<button (click)="back()" class="back-button">
+  Volver atrás
+</button>
+
 <div #grid class="grid">
-    <div class="grid-sizer"></div>
-  
-    <div *ngFor="let video of videos" [ngClass]="getVideoClasses(video)">
-      <a [attr.data-fslightbox]="'video-gallery'" [href]="video.url">
-        <video 
-          #videoRef
-          [src]="video.showPreview ? video.preview : video.thumbnail" 
-          muted 
-          autoplay 
-          loop 
-          playsinline
-          class="video-thumb"
-          (loadedmetadata)="onVideoLoaded(videoRef)">
-        </video>
-      </a>
-    </div>
+  <div class="grid-sizer"></div>
+
+  <div *ngFor="let video of videos" [ngClass]="getVideoClasses(video)">
+    <a [attr.data-fslightbox]="'video-gallery'" [href]="video.url">
+      <video 
+        #videoRef
+        [src]="video.showPreview ? video.preview : video.thumbnail" 
+        muted 
+        autoplay 
+        loop 
+        playsinline
+        class="video-thumb"
+        (loadedmetadata)="onVideoLoaded(videoRef)">
+      </video>
+    </a>
   </div>
+</div>
+
+
+<button (click)="back()" class="back-button">
+  Volver atrás
+</button>
