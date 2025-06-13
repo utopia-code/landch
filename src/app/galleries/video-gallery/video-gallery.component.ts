@@ -14,6 +14,10 @@ import { VideosService } from '../../services/videos.service';
 })
 export class VideoGalleryComponent implements OnInit, AfterViewInit {
   @ViewChild('grid', { static: false }) grid!: ElementRef;
+  
+  imageURL: string = '../../../assets/images/webp/IMG_4276.webp';
+  textIntro: string = 'Vídeos';
+
   videos: VideoDTO[] = [];
   private masonry!: Masonry;
 

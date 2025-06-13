@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faCloudArrowDown, faEye, faHeart } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +8,8 @@ import Masonry from 'masonry-layout';
 import { ImageDTO } from '../../models/imageDTO';
 import { ImagesService } from '../../services/images.service';
 
+declare var refreshFsLightbox: () => void;
+
 @Component({
   selector: 'app-detail',
   standalone: true,
@@ -15,13 +17,32 @@ import { ImagesService } from '../../services/images.service';
   templateUrl: './detail.component.html',
   styleUrl: './detail.component.css'
 })
-export class DetailComponent implements OnInit, AfterViewInit {
+export class DetailComponent implements OnInit, AfterViewInit, AfterViewChecked {
   @ViewChild('grid', { static: false }) grid!: ElementRef;
   @ViewChildren('gridItem') gridItems!: QueryList<ElementRef>;
+
+  imageURL?: string;
+  textIntro?: string;
+
+  categories = [
+    { tag: 'pre-ceremonia', label: 'Plaza de María Pita', image: '../../../assets/images/webp/DSCF5554.webp' },
+    { tag: 'ceremonia', label: 'Ceremonia civil', image: '../../../assets/images/webp/IMG_4175_2.webp' },
+    { tag: 'firmas', label: 'Firmas', image: '../../../assets/images/webp/IMG_4261.webp' },
+    { tag: 'just-married', label: 'Recién casados', image: '../../../assets/images/webp/IMG_4347.webp' },
+    { tag: 'gaiteiro', label: 'Gaiteiro', image: '../../../assets/images/webp/IMG_4395.webp' },
+    // { tag: 'deco', label: 'Decoración', image: '../../../assets/images/webp/IMG_4276.webp' },
+    { tag: 'garden', label: 'Pazo de Xaz', image: '../../../assets/images/webp/IMG_4519_2.webp' },
+    { tag: 'photocall', label: 'Photo&shy;call', image: '../../../assets/images/webp/IMG_4457.webp' },
+    { tag: 'salon', label: 'Salón de los Castaños', image: '../../../assets/images/webp/IMG_4674.webp' },
+    { tag: 'party', label: 'Baile', image: '../../../assets/images/webp/IMG_4715.webp' },
+    { tag: 'photomaton', label: 'Photo&shy;maton', image: '../../../assets/images/webp/LC_FM_2_19_26.webp' }
+  ];
 
   images: ImageDTO[] = [];
   category: string | null = null;
   private masonry!: Masonry;
+
+  hasRefreshed = false;
 
   faHeart = faHeart;
   faCloundArrowDown = faCloudArrowDown;
@@ -32,18 +53,49 @@ export class DetailComponent implements OnInit, AfterViewInit {
     private imagesService: ImagesService
   ) {}
 
+  // ngOnInit(): void {
+  //   this.category = this.activatedRoute.snapshot.paramMap.get('category');
+
+  //   const categoryTag = this.categories.find(c => c.tag === this.category);
+
+  //   if (categoryTag) {
+  //     this.imageURL = categoryTag.image;
+  //     this.textIntro = categoryTag.label;
+  //   }
+
+  //   if (this.category) {
+  //     this.imagesService.getImagesByTag(this.category).subscribe((data) => {
+  //       this.images = data;
+
+  //       setTimeout(() => {
+  //         this.initMasonry();
+  //       }, 0);
+  //     });
+  //   }
+  // }
+
   ngOnInit(): void {
-    this.category = this.activatedRoute.snapshot.paramMap.get('category');
-
-    if (this.category) {
-      this.imagesService.getImagesByTag(this.category).subscribe((data) => {
-        this.images = data;
-
-        setTimeout(() => {
-          this.initMasonry();
-        }, 0);
-      });
-    }
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.category = params.get('category');
+  
+      const categoryTag = this.categories.find(c => c.tag === this.category);
+  
+      if (categoryTag) {
+        this.imageURL = categoryTag.image;
+        this.textIntro = categoryTag.label;
+      }
+  
+      if (this.category) {
+        this.imagesService.getImagesByTag(this.category).subscribe((data) => {
+          this.images = data;
+  
+          setTimeout(() => {
+            this.initMasonry();
+            this.hasRefreshed = false;
+          }, 0);
+        });
+      }
+    });
   }
 
   ngAfterViewInit(): void {
@@ -54,6 +106,15 @@ export class DetailComponent implements OnInit, AfterViewInit {
         import('fslightbox');
       }, 0);
     });
+  }
+
+  ngAfterViewChecked() {
+    if (!this.hasRefreshed && this.gridItems.length > 0) {
+      setTimeout(() => {
+        refreshFsLightbox();
+        this.hasRefreshed = true;
+      }, 0);
+    }
   }
 
   initMasonry(): void {
