@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
     const canvas = document.getElementById('confetti-canvas') as HTMLCanvasElement;
     const myConfetti = confetti.create(canvas, { resize: true, useWorker: true });
 
-    const duration = 7 * 1000;
+    const duration = 5 * 1000;
     const end = Date.now() + duration;
     const colors = ["#d60382", "#ee90c1"];
 

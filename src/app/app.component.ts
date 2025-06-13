@@ -28,6 +28,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 export class AppComponent implements OnInit {
   title = 'LandCh';
+  showConfetti = true;
   showWelcome = true;
   preloadHome = false;
   showHome = false;
@@ -36,15 +37,17 @@ export class AppComponent implements OnInit {
     const alreadyShown = sessionStorage.getItem('welcomeShown');
 
     if (alreadyShown) {
+      this.showConfetti = false;
       this.showWelcome = false;
       this.preloadHome = true;
       this.showHome = true;
     } else {
       setTimeout(() => {
         this.preloadHome = true;
-      }, 4000);
+      }, 5000);
 
       setTimeout(() => {
+        this.showConfetti = false;
         this.showWelcome = false;
         this.showHome = true;
         sessionStorage.setItem('welcomeShown', 'true');

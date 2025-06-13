@@ -1,11 +1,13 @@
 <app-header *ngIf="preloadHome"></app-header>
 
-<app-welcome *ngIf="showWelcome" [@fadeInOut]></app-welcome>
+<app-welcome *ngIf="showConfetti" [@fadeInOut]></app-welcome>
+
+<div *ngIf="showWelcome" [@fadeInOut] class="image-bg">
+  <p><span class="t-top">CH</span><span class="t-bottom">&L</span></p>
+</div>
 
 <ng-container *ngIf="preloadHome">
-  <div *ngIf="showHome" [@fadeInOut]>
     <router-outlet></router-outlet>
-  </div>
 </ng-container>
 
 <app-footer *ngIf="preloadHome"></app-footer>
