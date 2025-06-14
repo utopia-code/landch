@@ -1,34 +1,188 @@
-/* .intro {
-    height: 100vh;
-    width: 100vw;
-    margin-bottom: 200vh;
-} */
+/* MENU */
 
-.f-position {
-    position: absolute;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
     top: 0;
-    bottom: 0;
     left: 0;
     right: 0;
-
+    z-index: 100;
 }
 
-.f-big {
-    font-size: 1500px;
-    margin: 10px;
+
+/* LOGO */
+
+.logo {
+    font-family: 'Bodoni', serif;
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+
+/* BURGER MENU */
+
+.menu-trigger {
+    display: flex;
+    opacity: 1;
+    transition: opacity 0.2s 0.2s ease, top 0.4s ease;
+    pointer-events: auto;
+    z-index: 1;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    padding: .75rem;
+}
+
+.hamburger {
     display: block;
-    line-height: .5;
+    position: relative;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
 }
 
-.right {
-    text-align: right;
-
+.hamburger .hamburger-box {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    position: relative;
 }
 
-.center {
-    text-align: center;
+.hamburger .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: calc(-1 * calc(2px * .5));
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-.left {
-    text-align: left;
+.hamburger .hamburger-inner,
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+    width: 2rem;
+    height: 3px;
+    background-color: var(--color-primary);
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger .hamburger-inner::before,
+.hamburger .hamburger-inner::after {
+    content: "";
+    display: block;
+}
+
+.hamburger .hamburger-inner::before {
+    top: calc(-1 * calc(calc(1.3rem - calc(2px * 2)) * .5));
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+}
+
+.hamburger .hamburger-inner::after {
+    bottom: calc(-1 * calc(calc(1.3rem - calc(2px * 2)) * .5));
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.menu-trigger.active .hamburger .hamburger-inner,
+.menu-trigger.active .hamburger .hamburger-inner::before,
+.menu-trigger.active .hamburger .hamburger-inner::after {
+    background-color: #fff;
+}
+
+.menu-trigger.active .hamburger .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.menu-trigger.active .hamburger .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+}
+
+.menu-trigger.active .hamburger .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+
+.main-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -50vw;
+    background-color: var(--color-primary);
+    color: #fff;
+    width: 50vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin-right .2s ease-in-out;
+}
+
+.main-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 20%;
+    width: 100%;
+}
+
+.main-menu ul li a {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    margin: 10px 0;
+    margin-left: 0;
+    transition: margin-left .15s ease;
+}
+
+.main-menu ul li a:hover {
+    margin-left: -15px;
+}
+
+.main-menu ul li a.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.main-menu ul li a.active-link:hover {
+    margin-left: 0;
+}
+
+.menu-trigger.active+.main-menu {
+    margin-right: 0;
+}
+
+@media screen and (max-width: 1020px) {
+    .main-menu {
+        margin-right: -80vw;
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 767.89px) {
+    .main-menu {
+        margin-right: -100vw;
+        width: 100vw;
+    }
 }

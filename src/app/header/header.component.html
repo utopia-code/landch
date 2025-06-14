@@ -1,8 +1,26 @@
-<!-- <div class="intro"></div> -->
+<div class="header">
+    <div class="logo" (click)="navigateHome()">L&Ch</div>
 
+    <div class="menu-trigger" [class.active]="menuOpen">
+        <button 
+            class="hamburger" 
+            type="button" 
+            title="open menu"
+            (click)="toogleMenu()">
+            <span class="hamburger-box"><span class="hamburger-inner"></span></span>
+        </button>
+    </div>
 
-<!-- <h1 class="outfit f-position">
-    <span class="f-big right c-secondary">Ch</span>
-    <span class="f-big left c-primary-sat">&</span>
-    <span class="f-big center c-secondary-sat">La</span>
-</h1> -->
+    <nav class="main-menu">
+        <ul>
+            <li *ngFor="let item of menuItems">
+                <a 
+                    [routerLink]="item.route"
+                    routerLinkActive="active-link"
+                    [routerLinkActiveOptions]="{ exact: true }">
+                    {{ item.label }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
