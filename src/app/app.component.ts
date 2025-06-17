@@ -27,7 +27,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 })
 
 export class AppComponent implements OnInit {
-  title = 'LandCh';
+  title = 'Diecisiete de Junio';
   showConfetti = true;
   showWelcome = true;
   preloadHome = false;
