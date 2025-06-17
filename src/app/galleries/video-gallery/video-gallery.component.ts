@@ -4,11 +4,13 @@ import imagesLoaded from 'imagesloaded';
 import Masonry from 'masonry-layout';
 import { VideoDTO } from '../../models/videoDTO';
 import { VideosService } from '../../services/videos.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-video-gallery',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FontAwesomeModule],
   templateUrl: './video-gallery.component.html',
   styleUrl: './video-gallery.component.css'
 })
@@ -20,6 +22,8 @@ export class VideoGalleryComponent implements OnInit, AfterViewInit {
 
   videos: VideoDTO[] = [];
   private masonry!: Masonry;
+
+  faEye = faEye;
 
   constructor(
     private videosService: VideosService,
