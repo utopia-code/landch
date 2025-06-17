@@ -30,7 +30,7 @@ export class DetailComponent implements OnInit, AfterViewInit, AfterViewChecked 
     { tag: 'firmas', label: 'Firmas', image: '../../../assets/images/webp/IMG_4261.webp' },
     { tag: 'just-married', label: 'Recién casados', image: '../../../assets/images/webp/IMG_4347.webp' },
     { tag: 'gaiteiro', label: 'Gaiteiro', image: '../../../assets/images/webp/IMG_4395.webp' },
-    // { tag: 'deco', label: 'Decoración', image: '../../../assets/images/webp/IMG_4276.webp' },
+    { tag: 'deco', label: 'Deco&shy;ración', image: '../../../assets/images/webp/DSCF5756.webp' },
     { tag: 'garden', label: 'Pazo de Xaz', image: '../../../assets/images/webp/IMG_4519_2.webp' },
     { tag: 'photocall', label: 'Photo&shy;call', image: '../../../assets/images/webp/IMG_4457.webp' },
     { tag: 'salon', label: 'Salón de los Castaños', image: '../../../assets/images/webp/IMG_4674.webp' },
