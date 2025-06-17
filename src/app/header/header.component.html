@@ -17,7 +17,8 @@
                 <a 
                     [routerLink]="item.route"
                     routerLinkActive="active-link"
-                    [routerLinkActiveOptions]="{ exact: true }">
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    (click)="closeMenu()">
                     {{ item.label }}
                 </a>
             </li>
